@@ -1,10 +1,9 @@
-package org.example;
+package org.example.clients;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Clients {
+public class QueueClients {
     private static String host = "localhost";
     private static int port = 8081;
     public static void main(String[] args) {
