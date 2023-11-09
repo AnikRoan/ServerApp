@@ -9,11 +9,11 @@ import java.time.format.DateTimeFormatter;
 
 
 public class VerificationServer {
-    private static String password = "пиріг";
-    private static String client = "Кліент: ";
-    private static int port = 8081;
+    private static final String password = "пиріг";
+    private static final String client = "Кліент: ";
+    private static final int port = 8081;
 
-    private static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss\n");
+    private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss\n");
 
     public static void main(String[] args) throws IOException {
         boolean exit = true;

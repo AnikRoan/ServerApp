@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class QueueClients {
-    private static String host = "localhost";
-    private static int port = 8081;
+    private final static String host = "localhost";
+    private final static int port = 8081;
     public static void main(String[] args) {
         List<Client> clients = new ArrayList<>();
         clients.add(new MoscalClient());
