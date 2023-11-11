@@ -1,17 +1,18 @@
 package org.exampl;
 
 public enum ServerInfo {
-    CLIENT("Client: "),
-    SERVER_NAME("Server: "),
-    START_MESSAGE("the server started..."),
-    CONNECT_MESSAGE("client connected."),
-    HELLO_SERVER("hello enter your greeting: \n"),
-    QUESTION("Що таке паляниця? \n"),
-    GOOD_BYE("Goodbye\n"),
+
+
+    START_INFO("Сервер запущено"),
+    CONNECT_MESSAGE("Кліент підключився"),
+    GREETING("Вітаю\n"),
+    SECURITY_QUESTION("Що таке паляниця? \n"),
+    CORRECT_ANSWER("пиріг"),
+    GOOD_BYE("До побачення\n"),
     BOMB("\uD83D\uDCA3\n"),
-    SEARCH_CONNECTION("search for connection..."),
-    INCORRECT_UNSWER("incorrect unswer...\n"),
-    OFF_SERVER("no connections...");
+
+    INCORRECT_ANSWER_INFO("Відповідь не вірна\n");
+
 
     private final String info;
 
