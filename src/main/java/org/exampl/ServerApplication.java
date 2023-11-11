@@ -3,6 +3,7 @@ package org.exampl;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.SocketTimeoutException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -17,6 +18,8 @@ public class ServerApplication {
 
         try {
             ServerSocket serverSocket = new ServerSocket(port);
+
+            serverSocket.setSoTimeout(70000);
 
             System.out.println(ServerInfo.INFO_START.getInfo());
 
@@ -59,7 +62,11 @@ public class ServerApplication {
             socket.close();
 
 
-        } catch (IOException e) {
+        } catch (SocketTimeoutException e) {
+            System.out.println("no connection..."+e.getMessage());
+
+
+        }catch (IOException e){
             e.printStackTrace();
 
         }
