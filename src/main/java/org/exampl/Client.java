@@ -17,7 +17,7 @@ public class Client {
 
         String message = scanner.next();
         while (!message.equals("exit")) {
-            message = scanner.next();
+            //message = scanner.next();
            out.write(message);
            out.flush();
             System.out.println(in.readLine());
