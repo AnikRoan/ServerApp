@@ -5,6 +5,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
 
 public class ServerApplication {
     public static void main(String[] args) throws IOException {
@@ -26,7 +27,7 @@ public class ServerApplication {
                     out.write(ServerInfo.INCORRECT_ANSWER_INFO.getInfo()+ServerInfo.BOMB.getInfo());
 
                 }else{
-                    out.write(dataTimeInfo().getBytes());
+                    out.write(Arrays.toString(dataTimeInfo().getBytes()));
                 }
             }
 

@@ -1,8 +1,6 @@
 package org.exampl;
 
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.PrintWriter;
+import java.io.*;
 import java.net.Socket;
 import java.util.Scanner;
 
@@ -11,15 +9,18 @@ public class Client {
         Scanner scanner = new Scanner(System.in);
         scanner.useDelimiter("\n");
 
-        Socket client = new Socket("localhost",8081);
-        OutputStream outputStream = client.getOutputStream();
-        PrintWriter printWriter = new PrintWriter(outputStream,true);
-        String message = scanner.next();
-        while (!message.equals("exit")){
-            message=scanner.next();
-            printWriter.println(message);
-            outputStream.write(message.getBytes());
+        Socket client = new Socket("localhost", 8081);
+        BufferedReader in = new BufferedReader(new InputStreamReader(client.getInputStream()));
+        BufferedWriter out = new BufferedWriter(new OutputStreamWriter(client.getOutputStream()));
 
+            System.out.println(in.readLine());
+
+        String message = scanner.next();
+        while (!message.equals("exit")) {
+            message = scanner.next();
+           out.write(message);
+           out.flush();
+            System.out.println(in.readLine());
 
 
         }
