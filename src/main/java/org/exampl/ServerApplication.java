@@ -31,7 +31,7 @@ public class ServerApplication {
 
             String clientGreeting = in.readLine();
 
-            if (clientGreeting.matches(regexCheck) && (clientGreeting.length() < minWordLength)) {
+            if (clientGreeting.matches(regexCheck) || (clientGreeting.length() < minWordLength)) {
                 out.write(ServerInfo.SECURITY_QUESTION.getInfo());
                 out.flush();
 
@@ -53,6 +53,11 @@ public class ServerApplication {
 
 
             }
+            serverSocket.close();
+            in.close();
+            out.close();
+            socket.close();
+
 
         } catch (IOException e) {
             e.printStackTrace();

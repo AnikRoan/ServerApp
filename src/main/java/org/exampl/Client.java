@@ -25,6 +25,7 @@ public class Client {
                 System.out.println(in.readLine());
 
             }
+            scanner.close();
 
 
         } catch (IOException e) {
