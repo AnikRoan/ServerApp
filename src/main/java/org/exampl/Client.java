@@ -19,10 +19,8 @@ public class Client {
             while (!client.isClosed()) {
                 message = scanner.next();
 
-
                 out.write(message + "\n");
                 out.flush();
-
 
                 System.out.println(in.readLine());
 
